@@ -1,0 +1,201 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" %>
+<div class="container">
+  <div class="form-group">
+    <div class="row">
+      <div class='col-sm-4 col-xs-6 sideleft'>
+        <%= form.label :judul, "Judul Event" %>
+        <%= form.text_field :judul, id: :event_judul, class: "form-control" %>
+      </div>
+    
+      <div class='col-sm-4 col-xs-6 sideleft'>
+        <%= form.label :tanggal %>
+        <%= form.text_field :tanggal, id: :event_tanggal, class: "form-control" %>
+      </div>         
+
+      <div class='col-sm-4 col-xs-6 sideleft'>
+        <%= form.label :lokasi %>
+        <%= form.text_field :lokasi, id: :event_lokasi, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+    <div class="row">
+      <div class='col-sm-12 col-xs-12 sideleft'>
+        <%= form.label :keterangan %>
+        <%= form.text_area :keterangan, id: :event_keterangan, class: "form-control",:rows => 5 %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 .col-sm-4 sideleft">
+        <%= form.label :"Gambar" %>  
+        <%= form.file_field :image ,:required => true, id: :event_image %>
+        <div id="target"></div>
+      </div>
+    </div>
+  </div>
+
+<hr >
+
+<h1>Nama dan Harga Ticket</h1>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :ticket, "Nama Ticket 1" %>
+        <%= form.text_field :ticket, id: :event_ticket, class: "form-control", :required => true %>
+      </div>
+    
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :harga %>
+        <%= form.text_field :harga, id: :event_harga, class: "form-control", type: "number", :required => true %>
+      </div>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :ticket1, "Nama Ticket 2" %>
+        <%= form.text_field :ticket1, id: :event_ticket1, class: "form-control" %>
+      </div>
+    
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :harga1, "Harga" %>
+        <%= form.text_field :harga1, id: :event_harga1, class: "form-control", type: "number" %>
+      </div>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :ticket2, "Nama Ticket 3" %>
+        <%= form.text_field :ticket2, id: :event_ticket2, class: "form-control" %>
+      </div>
+    
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :harga2, "Harga" %>
+        <%= form.text_field :harga2, id: :event_harga2, class: "form-control", type: "number" %>
+      </div>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :ticket3, "Nama Ticket 4" %>
+        <%= form.text_field :ticket3, id: :event_ticket3, class: "form-control" %>
+      </div>
+    
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :harga3, "Harga" %>
+        <%= form.text_field :harga3, id: :event_harga3, class: "form-control", type: "number" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :ticket4, "Nama Ticket 5" %>
+        <%= form.text_field :ticket4, id: :event_ticket4, class: "form-control"%>
+      </div>
+    
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :harga4, "Harga" %>
+        <%= form.text_field :harga4, id: :event_harga4, class: "form-control", type: "number" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :ticket5, "Nama Ticket 6" %>
+        <%= form.text_field :ticket5, id: :event_ticket5, class: "form-control" %>
+      </div>
+    
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :harga5, "Harga" %>
+        <%= form.text_field :harga5, id: :event_harga5, class: "form-control", type: "number" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :ticket6, "Nama Ticket 7" %>
+        <%= form.text_field :ticket6, id: :event_ticket6, class: "form-control" %>
+      </div>
+    
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :harga6, "Harga" %>
+        <%= form.text_field :harga6, id: :event_harga6, class: "form-control", type: "number" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :ticket7, "Nama Ticket 8" %>
+        <%= form.text_field :ticket7, id: :event_ticket7, class: "form-control" %>
+      </div>
+    
+      <div class="col-md-6 .col-sm-4 sideleft">
+        <%= form.label :harga7, "Harga" %>
+        <%= form.text_field :harga7, id: :event_harga7, class: "form-control", type: "number" %>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="form-group">
+    <%= form.submit "Submit", class: "btn btn-info" %>
+  </div>
+<% end %>
+
+</div>
+<script type="text/javascript">
+jQuery('#event_tanggal').datetimepicker();
+</script>
+
+<script type="text/javascript">
+  $(function() {
+  $('#event_image').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      img.height = 150;
+      img.widht = 200;
+      console.log(file);
+      img.src = file.target.result;
+      $('#target').html(img);
+    }
+    reader.readAsDataURL(image);
+    console.log(files);
+  });
+});
+</script>

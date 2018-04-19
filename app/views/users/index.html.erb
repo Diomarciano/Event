@@ -1,0 +1,32 @@
+<h1 class="text-center">Mobil Saya</h1>
+
+<div class="containerproduct">
+  <table class="table table-stripted table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>Gambar</th>
+        <th>Nama Mobil</th>  
+        <th>Merk</th>
+        <th>No HP</th>
+        <th>Kota</th>
+        <th>Harga sewa/hari</th> 
+        <th colspan="2"></th>
+        
+      </tr>
+    </thead>  
+          <% @users.each do |user| %>
+          <td><%= image_tag user.image(:thumb) %></td>
+          <td><%= user.judul%></td>
+          <td><%= user.lokasi %></td>
+          <td><%= user.tanggal %></td>
+          <td><%= user.keterangan %></td>
+          <td><%= data_currency(user.harga) %></td>
+         
+          <td><%= link_to 'Ubah', edit_event_path(user),class:"btn btn-info btn-sm" %></td>
+          <td><%= link_to 'Hapus', user,class:"btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          
+        </tr>
+      <% end %>
+        </tbody>
+  </table>
+</div>

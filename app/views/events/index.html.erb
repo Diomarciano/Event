@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="center">My Events</h1>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th width="150">Judul</th>
+        <th width="150">Tanggal</th>
+        <th width="150">Lokasi</th>
+        <th width="350">Keterangan</th>
+        <th width="150">Nama Ticket</th>
+        <th width="150">Harga Ticket</th>
+        <th colspan="3" width="50"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.judul %></td>
+          <td><%= event.tanggal.strftime("%A, %d %b %Y %l:%M %p") %></td>
+          <td><%= event.lokasi %></td>
+          <td><%= event.keterangan %></td>
+          <td><%= event.ticket %></td>
+          <td><%= data_currency(event.harga) %></td>
+          <td><%= link_to 'Show', event %></td>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'New Event', new_event_path, class: "btn btn-info" %>

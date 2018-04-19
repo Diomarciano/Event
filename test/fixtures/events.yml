@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  judul: MyString
+  tanggal: 2018-04-17 14:02:21
+  lokasi: MyString
+  keterangan: MyString
+  harga: 9.99
+
+two:
+  judul: MyString
+  tanggal: 2018-04-17 14:02:21
+  lokasi: MyString
+  keterangan: MyString
+  harga: 9.99

@@ -1,0 +1,66 @@
+<div class="container">
+<h2><%= @event.judul %></h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="thumbnail">
+      <%= image_tag @event.image.url(:large) %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <h4>Date & Time</h4>
+        <p><%= @event.tanggal.strftime("%A, %d %b %Y %l:%M %p") %></p>
+      </div>
+      <div class="form-group">
+        <h4>Location</h4>
+        <p><%= @event.lokasi %></p>
+      </div>
+      <div class="form-group">
+        <h4>Price</h4>
+        <p>Up To <%= data_currency(@event.harga) %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <h4>Share This</h4>
+      <div class="social">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Please see my <%= @event.judul %> here:" data-count="horizontal">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+      </div>
+  </div>
+
+  <div class="col-md-12">
+    <h4>Keterangan</h4>
+    <p><%= @event.keterangan %></p>
+  </div>
+
+  <div class="col-md-12">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Info Ticket
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+           <p><%= @event.ticket %> - <%= data_currency(@event.harga) %></p>
+           <p><%= @event.ticket1 %> - <%= data_currency(@event.harga1) %></p>
+           <p><%= @event.ticket2 %> - <%= data_currency(@event.harga2) %></p>
+           <p><%= @event.ticket3 %> - <%= data_currency(@event.harga3) %></p>
+           <p><%= @event.ticket4 %> - <%= data_currency(@event.harga4) %></p>
+           <p><%= @event.ticket5 %> - <%= data_currency(@event.harga5) %></p>
+           <p><%= @event.ticket6 %> - <%= data_currency(@event.harga6) %></p>
+           <p><%= @event.ticket6 %> - <%= data_currency(@event.harga6) %></p>
+           <p><%= @event.ticket7 %> - <%= data_currency(@event.harga7) %></p>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+
+</div>
